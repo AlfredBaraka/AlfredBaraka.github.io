@@ -3,60 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alfred Baraka Rugoye | AI/ML Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://unpkg.com/@phosphor-icons/web"></script>
+    <title>Shanaly Technologies</title>
+    
+    <!-- GOOGLE FONTS (Modern Tech Look) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- BOOTSTRAP 5 CSS (The engine for mobile responsiveness) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        /* BRAND COLORS */
+        :root {
+            --brand-dark: #0f172a;
+            --brand-blue: #2563eb;
+            --brand-gold: #f59e0b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #334155;
+            background-color: #f8fafc;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: var(--brand-dark);
+            padding: 15px 0;
+        }
+        .navbar-brand {
+            font-weight: 700;
+            color: white !important;
+            font-size: 1.5rem;
+        }
+        .nav-link {
+            color: #cbd5e1 !important;
+            font-weight: 500;
+            margin-left: 15px;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--brand-gold) !important;
+        }
+        .navbar-toggler {
+            border-color: rgba(255,255,255,0.5);
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* HERO SECTION */
+        .hero-section {
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        
+        /* CARDS */
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(37, 99, 235, 0.1);
+            color: var(--brand-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* BUTTONS */
+        .btn-brand {
+            background-color: var(--brand-blue);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            border: none;
+        }
+        .btn-brand:hover {
+            background-color: var(--brand-gold);
+            color: white;
+        }
+
+        /* OMNI SECTION */
+        .omni-badge {
+            background-color: #dbeafe;
+            color: var(--brand-blue);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        footer {
+            background-color: var(--brand-dark);
+            color: #94a3b8;
+            padding: 40px 0;
+        }
     </style>
 </head>
-<body class="bg-gray-900 text-white">
-    <div class="max-w-5xl mx-auto p-8">
-        <!-- Hero Section -->
-        <header class="text-center py-12">
-            <h1 class="text-5xl font-extrabold">Alfred Baraka Rugoye</h1>
-            <p class="text-xl text-gray-400 mt-3">AI Innovator | ML Engineer | Computer Vision Expert</p>
-        </header>
-        
-        <!-- About Section -->
-        <section class="text-center bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
-            <h2 class="text-3xl font-semibold mb-4">About Me</h2>
-            <p class="text-gray-300">I'm a passionate AI researcher and developer focusing on computer vision and AI-driven solutions. My mission is to create impactful technologies that push the boundaries of innovation.</p>
-        </section>
-        
-        <!-- Featured Project Demo -->
-        <section class="bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
-            <h2 class="text-3xl font-semibold mb-4">Featured Project</h2>
-            <div class="aspect-w-16 aspect-h-9">
-                <iframe class="w-full h-72 rounded-lg" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span style="color: var(--brand-gold);">//</span> Shanaly
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#omni">Omni ERP</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
             </div>
-            <p class="text-gray-300 mt-4">This is a live demo of my latest AI model. Watch it in action.</p>
-        </section>
-        
-        <!-- Projects Section -->
-        <section class="bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
-            <h2 class="text-3xl font-semibold mb-4">Projects</h2>
-            <div class="space-y-6">
-                <div class="p-6 bg-gray-700 rounded-lg shadow">
-                    <h3 class="text-2xl font-semibold">Maladetect</h3>
-                    <p class="text-gray-300">AI-powered malaria detection using YOLO v8.</p>
-                    <a href="#" class="text-blue-400 font-semibold flex items-center mt-2">GitHub Repo <i class="ph ph-arrow-right ml-2"></i></a>
-                </div>
-                <div class="p-6 bg-gray-700 rounded-lg shadow">
-                    <h3 class="text-2xl font-semibold">Swahili Text Classifier</h3>
-                    <p class="text-gray-300">A deep learning model for classifying Swahili text.</p>
-                    <a href="#" class="text-blue-400 font-semibold flex items-center mt-2">GitHub Repo <i class="ph ph-arrow-right ml-2"></i></a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4">Engineering Africa's Digital Future</h1>
+                    <p class="lead mb-5" style="opacity: 0.9;">Shanaly Technologies delivers enterprise-grade ERP systems and custom software development. We build the tools that power business.</p>
+                    <a href="#omni" class="btn btn-brand me-2">View Shanaly Omni</a>
+                    <a href="#contact" class="btn btn-outline-light">Get in Touch</a>
                 </div>
             </div>
-        </section>
-        
-        <!-- Contact Section -->
-        <section class="bg-gray-800 p-6 rounded-lg shadow-lg">
-            <h2 class="text-3xl font-semibold mb-4">Contact</h2>
-            <p class="text-gray-300">Want to collaborate? Reach out to me!</p>
-            <p class="text-blue-400 font-semibold mt-2">Email: <a href="mailto:alfredbaraka287@gmail.com">alfredbaraka287@gmail.com</a></p>
-            <p class="text-blue-400 font-semibold mt-2">GitHub: <a href="https://github.com/AlfredBaraka">AlfredBaraka</a></p>
-        </section>
-    </div>
+        </div>
+    </section>
+
+    <!-- OMNI SECTION -->
+    <section id="omni" class="py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <span class="omni-badge mb-3 d-inline-block">Flagship Product</span>
+                    <h2 class="fw-bold mb-3" style="color: var(--brand-dark);">Shanaly Omni ERP</h2>
+                    <p class="text-muted mb-4">Stop juggling spreadsheets and disconnected apps. Omni is the centralized operating system for Hotels, Shops, Warehouses, and Corporate offices.</p>
+                    
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>+ Integrated Finance:</strong> Track every shilling in real-time.</li>
+                        <li class="mb-2"><strong>+ Inventory Control:</strong> Automated stock alerts for warehouses.</li>
+                        <li class="mb-2"><strong>+ HR & Payroll:</strong> Manage your team effortlessly.</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card bg-white p-4 border-start border-5 border-primary">
+                        <h5 class="fw-bold">System Architecture</h5>
+                        <hr>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Server Status</span>
+                            <span class="text-success fw-bold">Online</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Security</span>
+                            <span class="text-primary fw-bold">End-to-End Encrypted</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span>Platform</span>
+                            <span class="fw-bold">Web & Mobile Ready</span>
+                        </div>
+                        <div class="mt-4 p-3 bg-light rounded text-center">
+                            <small class="text-muted">Currently deploying v1.0</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Core Capabilities</h2>
+                <p class="text-muted">Expertise driven by Computer Science fundamentals.</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card p-4">
+                        <div class="icon-box">CS</div>
+                        <h5 class="fw-bold">Custom Development</h5>
+                        <p class="text-muted small">Tailored software built from scratch to solve unique challenges.</p>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card p-4">
+                        <div class="icon-box">App</div>
+                        <h5 class="fw-bold">Mobile & Web</h5>
+                        <p class="text-muted small">Responsive applications that work on any device, anywhere.</p>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card p-4">
+                        <div class="icon-box">DB</div>
+                        <h5 class="fw-bold">Data Systems</h5>
+                        <p class="text-muted small">Complex database architecture and optimization for high-load systems.</p>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card p-4">
+                        <div class="icon-box">IT</div>
+                        <h5 class="fw-bold">Consultancy</h5>
+                        <p class="text-muted small">Technical strategy to modernize your existing infrastructure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="container text-center">
+            <h3 class="text-white mb-4">Ready to upgrade your business?</h3>
+            <p class="mb-4">Contact the development team directly.</p>
+            
+            <div class="d-flex justify-content-center flex-column flex-md-row gap-3 mb-5">
+                <a href="mailto:alfredbaraka287@mail.com" class="text-decoration-none text-light fs-5">
+                    alfredbaraka287@mail.com
+                </a>
+            </div>
+            
+            <div class="border-top border-secondary pt-4">
+                <p class="small mb-0">&copy; <span id="year"></span> Shanaly Technologies. Tanzania.</p>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOOTSTRAP JS (Required for the Mobile Menu to work) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
